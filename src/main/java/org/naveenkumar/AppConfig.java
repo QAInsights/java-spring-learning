@@ -2,6 +2,7 @@ package org.naveenkumar;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
+import org.springframework.context.annotation.Scope;
 import org.springframework.stereotype.Component;
 
 @Component
@@ -14,6 +15,7 @@ public class AppConfig {
     return new Drivers();
   }
 
+  @Scope("prototype")
   @Bean("oldBike")
   public Bike oldBike() {
     return new Bike("Splendor", 250000D, new Drivers("NaveenKumar", true));
